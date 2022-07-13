@@ -14,12 +14,30 @@ const HomeScreen = ({ navigation }: any) => {
     navigation.navigate("Scale");
   };
 
+  const openWidthAndHeight = () => {
+    navigation.navigate("WidthAndHeight");
+  };
+
+  const openAbsolutePosition = () => {
+    navigation.navigate("AbsolutePosition");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <Button onPress={openOpacity} title="See Opacity" color="tomato" />
         <Button onPress={openTranslate} title="See Translate" color="purple" />
         <Button onPress={openScale} title="See Scale" color="lightblue" />
+        <Button
+          onPress={openWidthAndHeight}
+          title="See Width & Height"
+          color="green"
+        />
+        <Button
+          onPress={openAbsolutePosition}
+          title="See Absolute Position"
+          color="red"
+        />
       </View>
     </View>
   );
