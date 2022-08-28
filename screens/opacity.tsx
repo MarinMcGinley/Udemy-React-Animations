@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
   Animated,
-} from "react-native";
+} from 'react-native';
 
 const Opacity = () => {
   const [animation, setAnimation] = useState(new Animated.Value(1));
@@ -39,13 +39,13 @@ const Opacity = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   box: {
     width: 150,
     height: 150,
-    backgroundColor: "tomato",
+    backgroundColor: 'tomato',
   },
 });
 

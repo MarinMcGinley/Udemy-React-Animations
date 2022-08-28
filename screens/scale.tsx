@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
   Animated,
   Text,
-} from "react-native";
+} from 'react-native';
 
 const Scale = () => {
   const [animation, setAnimation] = useState(new Animated.Value(1));
@@ -52,13 +52,13 @@ const Scale = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   box: {
     width: 150,
     height: 150,
-    backgroundColor: "tomato",
+    backgroundColor: 'tomato',
   },
 });
 
