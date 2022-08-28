@@ -8,6 +8,7 @@ import Opacity from './screens/opacity';
 import Rotation from './screens/rotation';
 import Scale from './screens/scale';
 import Translate from './screens/translate';
+import WidthHeightPercentage from './screens/widthHeightPercentage';
 import WidthAndHeight from './screens/withAndHeight';
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +28,10 @@ export default function App() {
           component={ColorBackgroundColor}
         />
         <Stack.Screen name='Rotation' component={Rotation} />
+        <Stack.Screen
+          name='WidthHeightPercentage'
+          component={WidthHeightPercentage}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

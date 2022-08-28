@@ -35,7 +35,14 @@ const HomeScreen = ({ navigation }: any) => {
     navigation.navigate('Rotation');
   };
 
-  const buttonColor = colors.colorPalette2.orangePink;
+  const openWidthHeightPercentage = () => {
+    navigation.navigate('WidthHeightPercentage');
+  };
+
+  const buttonColor1 = colors.colorPalette2.orangePink;
+  const buttonColor2 = colors.colorPalette1.primaryRoyalBlue;
+  const buttonColor3 = colors.colorPalette1.primaryPastelGreen;
+  const buttonColor4 = colors.colorPalette1.primaryOceanBlue;
   const onPressButtonColor = colors.colorPalette2.rosePink;
   const buttonFontColor = '#E8F9FD';
 
@@ -45,6 +52,7 @@ const HomeScreen = ({ navigation }: any) => {
         colors.colorPalette3.rosyPink,
         colors.colorPalette3.sandyOrange,
         colors.colorPalette3.lightYellow,
+        colors.colorPalette3.blue,
       ]}
       style={styles.container}
     >
@@ -59,14 +67,14 @@ const HomeScreen = ({ navigation }: any) => {
           <Button
             onPress={openOpacity}
             title='See Opacity'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
           <Button
             onPress={openTranslate}
             title='See Translate'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
@@ -75,14 +83,14 @@ const HomeScreen = ({ navigation }: any) => {
           <Button
             onPress={openScale}
             title='See Scale'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
           <Button
             onPress={openWidthAndHeight}
             title='See Width & Height'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
@@ -91,14 +99,14 @@ const HomeScreen = ({ navigation }: any) => {
           <Button
             onPress={openAbsolutePosition}
             title='See Absolute Position'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
           <Button
             onPress={openColorBackgroundColor}
             title='See Color / Background Color'
-            color={buttonColor}
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
@@ -107,7 +115,14 @@ const HomeScreen = ({ navigation }: any) => {
           <Button
             onPress={openRotation}
             title='See Rotation'
-            color={buttonColor}
+            color={buttonColor1}
+            onPressColor={onPressButtonColor}
+            fontColor={buttonFontColor}
+          />
+          <Button
+            onPress={openWidthHeightPercentage}
+            title='See Width Height Percentage'
+            color={buttonColor1}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
           />
@@ -119,22 +134,16 @@ const HomeScreen = ({ navigation }: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 2,
-    // borderColor: 'pink',
+    paddingTop: 20,
     flex: 1,
-    // backgroundColor: '#fff',
     alignItems: 'center',
   },
   buttonsContainer: {
-    // borderWidth: 2,
-    // borderColor: 'blue',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
   },
   duoContainer: {
     flexDirection: 'row',
-    // borderWidth: 2,
-    // borderColor: 'purple',
     justifyContent: 'center',
   },
 });
