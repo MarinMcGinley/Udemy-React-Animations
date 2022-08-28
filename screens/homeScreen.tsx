@@ -27,6 +27,14 @@ const HomeScreen = ({ navigation }: any) => {
     navigation.navigate('AbsolutePosition');
   };
 
+  const openColorBackgroundColor = () => {
+    navigation.navigate('ColorBackgroundColor');
+  };
+
+  const openRotation = () => {
+    navigation.navigate('Rotation');
+  };
+
   const buttonColor = colors.colorPalette2.orangePink;
   const onPressButtonColor = colors.colorPalette2.rosePink;
   const buttonFontColor = '#E8F9FD';
@@ -34,7 +42,6 @@ const HomeScreen = ({ navigation }: any) => {
   return (
     <LinearGradient
       colors={[
-        // colors.colorPalette3.yellow,
         colors.colorPalette3.rosyPink,
         colors.colorPalette3.sandyOrange,
         colors.colorPalette3.lightYellow,
@@ -84,6 +91,22 @@ const HomeScreen = ({ navigation }: any) => {
           <Button
             onPress={openAbsolutePosition}
             title='See Absolute Position'
+            color={buttonColor}
+            onPressColor={onPressButtonColor}
+            fontColor={buttonFontColor}
+          />
+          <Button
+            onPress={openColorBackgroundColor}
+            title='See Color / Background Color'
+            color={buttonColor}
+            onPressColor={onPressButtonColor}
+            fontColor={buttonFontColor}
+          />
+        </View>
+        <View style={styles.duoContainer}>
+          <Button
+            onPress={openRotation}
+            title='See Rotation'
             color={buttonColor}
             onPressColor={onPressButtonColor}
             fontColor={buttonFontColor}
