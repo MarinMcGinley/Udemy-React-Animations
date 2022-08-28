@@ -4,20 +4,32 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Animated,
-  Text,
 } from 'react-native';
 
-const AbsolutePosition = () => {
-  const [animation, setAnimation] = useState(new Animated.Value(150));
+const Rotation = () => {
+  const [animation, setAnimation] = useState(new Animated.Value(0));
+
+  //   const animatedStyles = {
+  //     opacity: animation,
+  //   };
+
+  const rotateInterpolate = animation.interpolate({
+    inputRange: [0, 360],
+    outputRange: ['0deg', '360deg'],
+  });
 
   const animatedStyles = {
-    top: animation,
-    left: animation,
+    transform: [
+      {
+        rotate: rotateInterpolate,
+        // rotateX: rotateInterpolate,
+      },
+    ],
   };
 
   const startAnimation = () => {
     Animated.timing(animation, {
-      toValue: 300,
+      toValue: 360,
       duration: 1500,
       useNativeDriver: false,
     }).start(() => {
@@ -32,7 +44,9 @@ const AbsolutePosition = () => {
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={startAnimation}>
-        <Animated.View style={[styles.box, animatedStyles]} />
+        <Animated.View style={[styles.box, animatedStyles]}>
+          <Animated.Text>Hello Rotate</Animated.Text>
+        </Animated.View>
       </TouchableWithoutFeedback>
     </View>
   );
@@ -45,13 +59,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
     width: 150,
     height: 150,
     backgroundColor: 'tomato',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
-export default AbsolutePosition;
+export default Rotation;
