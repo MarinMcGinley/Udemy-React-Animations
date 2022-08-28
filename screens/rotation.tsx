@@ -9,10 +9,6 @@ import {
 const Rotation = () => {
   const [animation, setAnimation] = useState(new Animated.Value(0));
 
-  //   const animatedStyles = {
-  //     opacity: animation,
-  //   };
-
   const rotateInterpolate = animation.interpolate({
     inputRange: [0, 360],
     outputRange: ['0deg', '360deg'],

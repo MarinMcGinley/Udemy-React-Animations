@@ -33,9 +33,6 @@ const ColorBackgroundColor = () => {
       toValue: 1,
       duration: 1500,
       useNativeDriver: false,
-      // }).start(() => {
-      //   console.log('finished');
-      // });
     }).start(() => {
       Animated.timing(animation, {
         toValue: 0,
