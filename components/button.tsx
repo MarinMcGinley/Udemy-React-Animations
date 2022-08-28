@@ -1,47 +1,69 @@
-import React from 'react';
-import { TouchableHighlight, StyleSheet, View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 
-export const Button = (props: {
+interface ButtonProps {
   onPress: Function;
   title: string;
   color: string;
+  onPressColor: string;
   fontColor: string;
-}) => {
+}
+
+export const Button = ({
+  onPress,
+  title,
+  color,
+  onPressColor,
+  fontColor,
+}: ButtonProps) => {
+  const [pressed, isPressed] = useState(false);
+
   return (
-    <TouchableHighlight
+    <Pressable
       onPress={() => {
-        props.onPress;
+        onPress();
+        isPressed(true);
+        setTimeout(() => {
+          isPressed(false);
+        }, 1000);
       }}
     >
-      <View style={{ backgroundColor: props.color, ...styles.buttonContainer }}>
+      <View
+        style={
+          pressed
+            ? { backgroundColor: onPressColor, ...styles.buttonContainer }
+            : { backgroundColor: color, ...styles.buttonContainer }
+        }
+      >
         <Text
           style={{
-            color: props.fontColor,
+            color: fontColor,
             ...styles.buttonText,
           }}
         >
-          {props.title}
+          {title}
         </Text>
       </View>
-    </TouchableHighlight>
+    </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    height: 140,
-    width: 140,
+    height: 150,
+    width: 150,
+    padding: 10,
     margin: 5,
-    marginBottom: 5,
     marginRight: 5,
-    borderWidth: 2,
-    borderColor: 'black',
-    // flex: 1,
+    // borderWidth: 2,
+    // borderColor: 'black',
     flexDirection: 'row',
     alignItems: 'center',
+    borderRadius: 4,
   },
   buttonText: {
     textAlign: 'center',
+    fontWeight: '800',
     flex: 1,
   },
 });
